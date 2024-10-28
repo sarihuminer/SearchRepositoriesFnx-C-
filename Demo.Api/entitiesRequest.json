@@ -1,0 +1,52 @@
+[
+  {
+    "source": "webint",
+    "entityType": "person",
+    "fields": {
+      "tz": 3111,
+      "name": "dddd",
+      "age": 30,
+      "address": {
+        "city": "vv",
+        "region": "i"
+      }
+    }
+  },
+  {
+    "source": "c2",
+    "entityType": "person",
+    "fields": {
+      "tz": 2225,
+      "name": "sasa",
+      "age": 50,
+      "address": {
+        "city": "ee",
+        "region": "i"
+      }
+    }
+  },
+  {
+    "source": "c2",
+    "entityType": "car",
+    "fields": {
+      "color": "green",
+      "name": "subaro"
+    }
+  },
+  {
+    "source": "webint",
+    "entityType": "car",
+    "fields": {
+      "color": "yellow",
+      "name": "subaro"
+    }
+  },
+  {
+    "source": "webint",
+    "entityType": "car",
+    "fields": {
+      "cost": 30000,
+      "name": "subaro"
+    }
+  }
+]
