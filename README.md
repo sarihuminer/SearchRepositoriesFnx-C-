@@ -29,5 +29,12 @@ Before you begin, ensure you have the following installed:
 
 2. **Restore dependencies:**
 Run the following command to restore the required packages:
- ```bash
+   ```bash
    dotnet restore
+
+## Running the API
+To run the API, navigate to the Demo.Api project directory and execute the following command:
+
+    ```bash
+    dotnet run
+Once the API is running, you can access the Swagger documentation by navigating to http://localhost:5000/swagger (or the port specified in your configuration).
