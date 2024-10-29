@@ -1,6 +1,7 @@
 ﻿using Demo.Application.Implementations;
 using Demo.Application.Interfaces;
 using Demo.Domain.Model.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace Demo.Api.Controllers
         }
 
         [HttpGet("search")]
+        [Authorize]
         public async Task<IActionResult> SearchRepositories([FromQuery] string text)
         {
             if (string.IsNullOrWhiteSpace(text))

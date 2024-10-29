@@ -1,5 +1,6 @@
 ﻿using Demo.Application.Consumers;
 using Demo.Application.Implementations;
+using Demo.Application.Implementations.Helpers;
 using Demo.Application.Implementations.Proxies;
 using Demo.Application.Interfaces;
 using Demo.Application.Interfaces.Proxies;
@@ -12,9 +13,10 @@ namespace Demo.Application
         public static IServiceCollection AddApplicationFactory(this IServiceCollection services)
         {
             return services
-                .AddScoped<IGitHubSearchService,GitHubSearchService>()
+                .AddScoped<IGitHubSearchService, GitHubSearchService>()
                 .AddSingleton<IPrioritySettingsService, PrioritySettingsService>()
-                .AddTransient<IMergeEntitiesService,MergeEntitiesService>();
+                .AddTransient<IMergeEntitiesService, MergeEntitiesService>()
+                .AddScoped<JwtSecurityTokenHandlerWrapper>();
             // .AddHostedService<RabbitMqConsumer>();
         }
     }

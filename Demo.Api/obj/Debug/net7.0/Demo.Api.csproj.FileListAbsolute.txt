@@ -835,3 +835,4 @@ C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינו
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Api\obj\Debug\net7.0\Demo.Api.pdb
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Api\obj\Debug\net7.0\Demo.Api.genruntimeconfig.cache
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Api\obj\Debug\net7.0\ref\Demo.Api.dll
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

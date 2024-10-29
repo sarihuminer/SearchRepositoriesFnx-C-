@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "e4gPmZayK+0S+5EgLUoRc6lfw+3ohuc0Vkc01i92lDq0xzIEiS60v/s0ybwSYLYnbmPldspjeIj2MfLJN/Hldw==",
+  "dgSpecHash": "yen1zbkrf5l6FWQCo7zH/g3M0MvgpYDvIrxK6I/AIixGT8kIS/5R/9q5HFPCj+mmIvmpd4xedYsezsTTt1ws7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\fnx\\api\\Demo.Api\\Demo.Api.csproj",
   "expectedPackageFiles": [
@@ -64,6 +64,7 @@
     "C:\\Users\\sari\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\microelements.openapi.fluentvalidation\\6.0.0\\microelements.openapi.fluentvalidation.6.0.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\microelements.swashbuckle.fluentvalidation\\6.0.0\\microelements.swashbuckle.fluentvalidation.6.0.0.nupkg.sha512",
+    "C:\\Users\\sari\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.0\\microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
