@@ -44,16 +44,16 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Configure the default authorization policy
-builder.Services.AddAuthorization(options =>
+// Configure CORS (Define a single policy to allow the Angular app URL)
+builder.Services.AddCors(options =>
 {
-    options.DefaultPolicy = new AuthorizationPolicyBuilder()
-            .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-            .RequireAuthenticatedUser()
-            .Build();
-
+    options.AddPolicy("AllowAll", // You can rename this if needed
+        policy => policy
+            .WithOrigins("http://localhost:4200") // Allow requests from the Angular app's URL
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()); // Use this only if cookies or authentication are shared
 });
-
 
 // Add services to the container.
 builder.Services.AddMvc().AddFluentValidation(opt =>
@@ -110,17 +110,6 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(securityRequirement);
 });
 
-
-// Configure CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll",
-        builder => builder
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
-});
-
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var app = builder.Build();
 
@@ -142,53 +131,15 @@ if (env.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.Use(async (context, next) =>
-{
-    // Custom logic before the next middleware
-    if (context.Request.Method == "OPTIONS")
-    {
-        var response = context.Response;
-        response.Headers.Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-        response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        response.Headers.Add("Access-Control-Allow-Origin", MyAllowSpecificOrigins);
-    }
-    else
-    {
-        // Call the next middleware in the pipeline
-        await next.Invoke();
-    }
-});
-
-app.UseCors(builder => builder
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .SetIsOriginAllowed(origin => true)
-    .AllowCredentials());
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseCors("AllowAll");
-
 app.UseRouting();
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<JwtMiddleware>(); // Add JWT middleware
-app.Use(async (context, next) =>
-{
-    if (context.Request.Method == "OPTIONS")
-    {
-        var response = context.Response;
-        response.Headers.Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-        response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        response.Headers.Add("Access-Control-Allow-Origin", "*"); // Changed to "*"
-        response.StatusCode = 200; // Return 200 status for OPTIONS request
-    }
-    else
-    {
-        await next.Invoke();
-    }
-});
+
 
 app.UseEndpoints(endpoints =>
 {
