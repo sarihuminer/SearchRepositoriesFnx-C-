@@ -38,3 +38,8 @@ To run the API, navigate to the Demo.Api project directory and execute the follo
     ```bash
     dotnet run
 Once the API is running, you can access the Swagger documentation by navigating to http://localhost:5000/swagger (or the port specified in your configuration).
+
+## Endpoints
+The main endpoint to run the API is located in:
+
+Demo.Api > Controllers > GitHubRepositoryController
