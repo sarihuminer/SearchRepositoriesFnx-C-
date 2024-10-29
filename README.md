@@ -43,3 +43,22 @@ Once the API is running, you can access the Swagger documentation by navigating 
 The main endpoint to run the API is located in:
 
 Demo.Api > Controllers > GitHubRepositoryController
+
+## How It Works
+
+### Authentication
+- The API uses JWT for authenticating users. Upon successful login, a JWT token is generated and returned to the user.
+- This token must be included in the Authorization header of subsequent requests to access protected routes.
+
+### Middleware
+- Middleware is used to handle authentication, logging, and other cross-cutting concerns, allowing for cleaner and more maintainable code.
+
+### Dependency Injection
+- Services are injected into controllers via dependency injection, promoting a loosely coupled architecture.
+
+### Swagger Integration
+- Swagger provides an interactive API documentation page, allowing you to test endpoints easily. Access it at [http://localhost:5000/swagger](http://localhost:5000/swagger).
+
+### Jetbear Integration
+- Jetbear is added to the Swagger documentation to provide enhanced API testing features, allowing for a more streamlined testing process directly from the Swagger UI.
+
