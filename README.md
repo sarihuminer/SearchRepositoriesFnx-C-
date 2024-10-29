@@ -26,3 +26,8 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone <repository-url>
    cd <project-directory>
+
+2. **Restore dependencies:**
+Run the following command to restore the required packages:
+ ```bash
+   dotnet restore
